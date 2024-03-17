@@ -1,27 +1,34 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const dotenv = require('dotenv');
-const db = require('./config/db');
+const cors = require('cors');
+// const projectRoutes = require('./routes/projectRoutes');
+const authRoutes = require('./routes/authRoutes');
+const sequelize = require('./config/db');
 
+// Load environment variables
 dotenv.config();
 
+// Create Express app
 const app = express();
 
-app.use(bodyParser.json());
+// Middleware
+app.use(express.json());
+app.use(cors());
 
 // Routes
-const userRoutes = require('./routes/userRoutes');
-
-app.use('/api/users', userRoutes);
+app.use('/api', authRoutes);
+// app.use('/api/projects', projectRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something went wrong!');
+  res.status(500).json({ message: 'Internal server error' });
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+// Start the server
+const PORT = process.env.PORT || 5000;
+sequelize.sync().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
 });
