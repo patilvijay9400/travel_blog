@@ -1,7 +1,8 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
-// const projectRoutes = require('./routes/projectRoutes');
+const commentRoutes = require('./routes/commentRoutes');
+const blogRoutes = require('./routes/blogRoutes');
 const authRoutes = require('./routes/authRoutes');
 const sequelize = require('./config/db');
 
@@ -17,7 +18,8 @@ app.use(cors());
 
 // Routes
 app.use('/api', authRoutes);
-// app.use('/api/projects', projectRoutes);
+app.use('/api/blogs', blogRoutes);
+app.use('/comments', commentRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
