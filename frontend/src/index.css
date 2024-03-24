@@ -1,13 +1,43 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+body{
+    font-family: "Oswald", sans-serif;
+  }
+  .hero{
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://wanderland.qodeinteractive.com/wp-content/uploads/2019/11/h1-rev-slide1-bckg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 90vh;
+  }
+  .footer{
+    background-color: #242625;
+  }
+  .footer * {
+    color: #ffffff !important;
+  }
+  p, label{
+    font-family: "Inter", sans-serif;
+  }
+  .navbar{
+    background-color: #75756f;
+  }
+.about{
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://scontent-atl3-1.cdninstagram.com/v/t51.29350-15/137678995_230862268528597_5458570665346812463_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=18de74&_nc_ohc=EoQ8pfOPe8YAX-kuzlo&_nc_ht=scontent-atl3-1.cdninstagram.com&edm=ANo9K5cEAAAA&oh=00_AfAbeBATb2EtKhYQt2bvhnI2gs0iYHjli8ST3EfyXckXjA&oe=66044E37");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.blogs{
+  background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url("https://wanderland.qodeinteractive.com/wp-content/uploads/2019/10/blog-post-img-13.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+  /* -------------common classes------------------ */
+  .mw-48{
+    max-width: 48%;
+  }
+  .text-sm{
+    font-size: 14px;
+  }
