@@ -1,7 +1,5 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
-const User = require('./user'); 
-const BlogPost = require('./blogPost');
 
 const Comment = sequelize.define('Comment', {
   comment_id: {
@@ -14,21 +12,13 @@ const Comment = sequelize.define('Comment', {
     type: DataTypes.TEXT,
     allowNull: false
   },
-  post_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: BlogPost,
-      key: 'post_id'
-    }
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
-  author_id: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    references: {
-      model: User,
-      key: 'user_id'
-    }
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false
   },
   created_at: {
     type: DataTypes.DATE,

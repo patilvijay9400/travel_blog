@@ -1,12 +1,14 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
-
+import { useSelector } from "react-redux";
+import Logout from "../pages/Logout";
 const Header = () => {
   const [isRegistered, setIsRegistered] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
   const toggleModal = () => {
     setShowModal(!showModal);
   };
@@ -63,19 +65,24 @@ const Header = () => {
                 <NavLink
                   className="nav-link text-white"
                   activeClassName="active"
-                  to="/blogs"
+                  to="/blog-post"
                 >
                   Blogs
                 </NavLink>
               </li>
             </ul>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={toggleModal}
-            >
-              Login/Signup
-            </button>
+            {isAuthenticated ? (
+              <Logout />
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary"
+                onClick={toggleModal}
+              >
+                Login/Signup
+              </button>
+            )}
+
             {showModal && (
               <div
                 className="modal fade show"

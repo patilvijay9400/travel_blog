@@ -1,57 +1,75 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
-const CommentForm = ({ onSubmit }) => {
-    const [comment, setComment] = useState('');
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+const CommentForm = () => {
+  const [formData, setFormData] = useState({
+    content: '',
+    name: '',
+    email: ''
+  });
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        onSubmit({ comment, name, email });
-        setComment('');
-        setName('');
-        setEmail('');
-    };
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-    return (
-        <form onSubmit={handleSubmit}>
-            <div className="mb-3">
-                <label htmlFor="comment" className="form-label">Comment</label>
-                <textarea
-                    className="form-control"
-                    id="comment"
-                    rows="3"
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
-                ></textarea>
-            </div>
-            <div className="mb-3 d-flex gap-3 w-100">
-                <div className='w-50'>
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:5000/comments/create', formData);
+      console.log('Comment created successfully:', response.data);
+      // Optionally, you can redirect or show a success message here
+    } catch (error) {
+      console.error('Error creating comment:', error);
+      // Optionally, handle error display or redirect to an error page
+    }
+  };
 
-                <label htmlFor="name" className="form-label">Your Name</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                />
-                </div>
-                <div className='w-50'>
-                <label htmlFor="email" className="form-label">Your Email</label>
-                <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
-            </div>
-            </div>
-            
-            <button type="submit" className="btn btn-primary">Post Comment</button>
-        </form>
-    );
+  return (
+    <div className="container mt-4">
+      <h2>Create New Comment</h2>
+      <form onSubmit={handleSubmit} className='row mb-3'>
+        <div className="col-12 mb-3">
+          <label htmlFor="content" className="form-label">Content:</label>
+          <textarea
+            id="content"
+            name="content"
+            value={formData.content}
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <label htmlFor="name" className="form-label">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
+        </div>
+        <div className="mb-3 col-6">
+          <label htmlFor="email" className="form-label">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            className="form-control"
+            required
+          />
+              </div>
+              <div className='col-12'>
+                  
+        <button type="submit" className="btn btn-primary">Submit</button>
+              </div>
+      </form>
+    </div>
+  );
 };
 
 export default CommentForm;

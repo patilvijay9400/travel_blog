@@ -3,8 +3,8 @@ const Comment = require('../models/comment');
 // Create a new comment
 const createComment = async (req, res) => {
   try {
-    const { content, post_id, author_id } = req.body;
-    const newComment = await Comment.create({ content, post_id, author_id });
+    const { content, name, email } = req.body;
+    const newComment = await Comment.create({ content, name, email });
     res.status(201).json({ message: "Comment created successfully!", comment: newComment });
   } catch (error) {
     console.error(error);

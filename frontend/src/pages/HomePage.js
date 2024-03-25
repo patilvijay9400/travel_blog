@@ -50,9 +50,9 @@ const HomePage = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua. Ut enim. ad minim veniam ...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -72,9 +72,9 @@ const HomePage = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua. Ut enim. ad minim veniam ...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
             <div className="col-md-6">

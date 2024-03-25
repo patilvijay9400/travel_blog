@@ -69,7 +69,7 @@ const Blogs = () => {
   return (
     <div>
       <header className="bg-white shadow-sm">
-        <div className="px-4 py-6 px-lg-5 d-flex justify-content-between align-items-center">
+        <div className="px-4 py-3 px-lg-5 d-flex justify-content-between align-items-center">
           <h2 className="">
             Blogs
           </h2>

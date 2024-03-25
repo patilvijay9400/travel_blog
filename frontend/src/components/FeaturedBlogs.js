@@ -2,6 +2,7 @@ import React from "react";
 import ReactOwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
+import { NavLink } from "react-router-dom";
 
 const FeaturedBlogs = () => {
   const options = {
@@ -48,9 +49,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -75,9 +76,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -102,9 +103,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -129,9 +130,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -156,9 +157,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>
@@ -183,9 +184,9 @@ const FeaturedBlogs = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididu nt ut labore et dolore magna aliqua...
               </p>
-              <button type="button" className="btn btn-primary">
+              <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                 Read More
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

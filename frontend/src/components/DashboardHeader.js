@@ -46,7 +46,7 @@ const DashboardHeader = () => {
                 <NavLink
                   className="nav-link text-white"
                   activeClassName="active"
-                  to="/comments"
+                  to="/dashboard/comments"
                 >
                   Comments
                 </NavLink>

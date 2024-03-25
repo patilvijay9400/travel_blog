@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import Layout from "../ui/Layout";
+import { NavLink } from "react-router-dom";
 
 const Blogs = () => {
   return (
@@ -9,7 +10,7 @@ const Blogs = () => {
         <h1 className="py-5 display-5 fw-bold text-white">Blogs</h1>
       </header>
       <div className="container mt-5">
-      <h2 className="display-6 fw-bold text-center">All Blogs</h2>
+        <h2 className="display-6 fw-bold text-center">All Blogs</h2>
         <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
           <div className="col">
             <div class="card border-0 rounded-0">
@@ -33,9 +34,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -61,9 +62,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -89,9 +90,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -117,9 +118,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -145,9 +146,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
@@ -173,9 +174,9 @@ const Blogs = () => {
                   do eiusmod tempor incididu nt ut labore et dolore magna
                   aliqua...
                 </p>
-                <button type="button" className="btn btn-primary">
+                <NavLink to="/blog-details" className="btn btn-primary btn-lg">
                   Read More
-                </button>
+                </NavLink>
               </div>
             </div>
           </div>
