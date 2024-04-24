@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
 const DashboardHeader = () => {
-
+  const user = useSelector((state) => state);
+  console.log(user)
   return (
     <nav className="navbar navbar-expand-lg px-md-5">
       <div className="container-fluid">
@@ -52,7 +54,6 @@ const DashboardHeader = () => {
                 </NavLink>
               </li>
             </ul>
-            <h6 className="mb-0 text-white">User Name</h6>
           </div>
         </div>
       </div>

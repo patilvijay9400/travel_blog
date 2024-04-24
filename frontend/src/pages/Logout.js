@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { logOut } from "../store/authSlice";
 
 const Logout = () => {
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const logout = async () => {
     try {

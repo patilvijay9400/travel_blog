@@ -38,7 +38,6 @@ export const deleteBlog = createAsyncThunk(
 );
 
 // Define thunk for updating a Blog
-debugger
 export const updateBlog = createAsyncThunk(
   'blogs/updateBlog',
   async (BlogData) => {
